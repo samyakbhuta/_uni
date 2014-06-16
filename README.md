@@ -1,5 +1,12 @@
 ## _uni
 
+#### Installation
+
+```
+npm install unilities
+```
+
+#### Creating a block
 
 * Instantiate a Unicode block
 
