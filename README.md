@@ -35,18 +35,22 @@
 
 * Add a subset ```Digit``` by providing name and an array that represents a subset.
   ```js
-  _uni.addSubset('Digit', [2790,2791,2792,2793,2794,2795,2796,2797,2798,2799]);
+  _gu.addSubset('Digit', [2790,2791,2792,2793,2794,2795,2796,2797,2798,2799]);
 
   // or
 
-  _uni.addSubset('Digit', _uni.charcodes(2790,2799));
+  _gu.addSubset('Digit', _gu.charcodes(2790,2799));
   ```
-  Here. ```_uni.charcodes()``` just returns a range of integers as array;
+  Here. ```_gu.charcodes()``` just returns a range of integers as array;
 
 * With ```Digit``` subset added, following enlisting and querying is possible, automatically.
 
   ```js
-  _uni.getDigitCodeList();
-  _uni.getDigitList();
-  _uni.isDigit('૯');
+  _gu.getDigitCodeList();
+  _gu.getDigitList();
+  _gu.isDigit('૯');
   ```
+
+
+## Thanks
+* Konarak Ratnakar
