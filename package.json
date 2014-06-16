@@ -1,6 +1,6 @@
 {
   "name": "unilities",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Helper library for Unicode script blocks",
   "main": "lib.js",
   "scripts": {
