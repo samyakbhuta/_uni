@@ -1,14 +1,14 @@
-var $gu = function () {
-	this.start = 2688; // 2688, start of Gujarati Unicode Code Block
-	this.size = 128; // 128, length of Gujarati Unicode Block
+var _uni = function ( start, size, name ) {
+	this.name = name; // Human readable name of the script
+	this.start = start; // start of Unicode block for this script
+	this.size = size; // length of Unicode block for this script
 	this.end = this.start + this.size - 1;
-	this.scriptName = 'Gujarati'; // Human readable name of the script
 
-	// Adding the 'complete' subset !
-	this.addSubset( this.scriptName, this.charcodes( this.start, this.end ) );
+	// Adding the 'complete' (the biggest possible) subset !
+	this.addSubset( this.name, this.charcodes( this.start, this.end ) );
 }
 
-$gu.prototype.charcodes = function ( start, end ) {
+_uni.prototype.charcodes = function ( start, end ) {
 	var list = [];
 	for ( var i = start ; i <= end ; i++ ) {
 		list.push(i);
@@ -18,15 +18,15 @@ $gu.prototype.charcodes = function ( start, end ) {
 
 // map the code points to actual chars
 // e.g [2709,2710,2710] gives ['ક','ખ','ગ']
-$gu.prototype.toChars = function ( charCodes ) {
+_uni.prototype.toChars = function ( charCodes ) {
 	return charCodes.map( function (i) {
 		return String.fromCharCode(i);
 	});
 }
 
-// Adds a named subset to ```$gu``` with common methods
+// Adds a named subset to ```_uni``` with common methods
 // Provide subset name and members (as charcodes!) of the subset as an array
-$gu.prototype.addSubset = function ( name, members ) {
+_uni.prototype.addSubset = function ( name, members ) {
 
 	// if ```members``` is a function, get individual members as array
 	members =  ( typeof members === 'function' ) ? members() : members;
@@ -58,4 +58,6 @@ $gu.prototype.addSubset = function ( name, members ) {
 	return true;
 }
 
-module.exports = new $gu();
+// 2688, start of Gujarati Unicode Code Block
+// 128, length of Gujarati Unicode Block
+module.exports = new _uni ( 2688, 128, 'Gujarati' );
