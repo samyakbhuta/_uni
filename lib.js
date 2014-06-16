@@ -58,6 +58,4 @@ _uni.prototype.addSubset = function ( name, members ) {
 	return true;
 }
 
-// 2688, start of Gujarati Unicode Code Block
-// 128, length of Gujarati Unicode Block
-module.exports = new _uni ( 2688, 128, 'Gujarati' );
+module.exports = _uni;
