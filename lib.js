@@ -47,8 +47,9 @@ _uni.prototype.addSubset = function ( name, members ) {
 		return this.toChars( members );
 	}
 
+	// Creating ```is<Subset>``` method
 	// One can pass charcode or the char itself
-	// Uses indexOf to check is a charcode or char belongs to a subset of not
+	// Uses indexOf to check is a charcode or char belongs to a subset or not
 	this[ 'is' + name ] = function ( char ) {
 		char = ( typeof char === 'string' ) ? char.charCodeAt(0) : char ;
 		return members.indexOf(char);
